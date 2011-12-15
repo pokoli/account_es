@@ -1,0 +1,3528 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+ <data>
+
+   <!-- Tax definition -->
+   <record model='account.tax.code.template' id='tax_code_es'>
+     <field name='name'>Impuestos </field>
+     <field ref='pgc' name='account'/>
+   </record>
+
+   <!-- IRPF -->
+   <record model='account.tax.code.template' id='tax_code_irpf'>
+     <field ref='tax_code_es' name='parent'/>
+     <field name='name'>IRPF</field>
+     <field name='code'>IRPF</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac'>
+     <field ref='tax_code_irpf' name='parent'/>
+     <field name='name'>IRPF a cuenta</field>
+     <field name='code'>IRPF.AC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_bi'>
+     <field ref='tax_code_irpf_ac' name='parent'/>
+     <field name='name'>Total base imponible a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_bi_01'>
+     <field ref='tax_code_irpf_ac_bi' name='parent'/>
+     <field name='name'>Total base imponibles al 1% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.BI.01</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_bi_07'>
+     <field ref='tax_code_irpf_ac_bi' name='parent'/>
+     <field name='name'>Total base imponibles al 7% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.BI.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_bi_15'>
+     <field ref='tax_code_irpf_ac_bi' name='parent'/>
+     <field name='name'>Total base imponibles al 15% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.BI.15</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_bi_18'>
+     <field ref='tax_code_irpf_ac_bi' name='parent'/>
+     <field name='name'>Total base imponibles al 18% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.BI.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_c'>
+     <field ref='tax_code_irpf_ac' name='parent'/>
+     <field name='name'>Cuota</field>
+     <field name='code'>IRPF.AC.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_c_01'>
+     <field ref='tax_code_irpf_ac_c' name='parent'/>
+     <field name='name'>Total cuota al 1% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.C.01</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_c_07'>
+     <field ref='tax_code_irpf_ac_c' name='parent'/>
+     <field name='name'>Total cuota al 7% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.C.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_c_15'>
+     <field ref='tax_code_irpf_ac_c' name='parent'/>
+     <field name='name'>Total cuota al 15% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.C.15</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_ac_c_18'>
+     <field ref='tax_code_irpf_ac_c' name='parent'/>
+     <field name='name'>Total cuota al 18% a cuenta IRPF</field>
+     <field name='code'>IRPF.AC.C.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p'>
+     <field ref='tax_code_irpf' name='parent'/>
+     <field name='name'>Retención IRPF practicada</field>
+     <field name='code'>IRPF.P</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_bi'>
+     <field ref='tax_code_irpf_p' name='parent'/>
+     <field name='name'>Total base imponible por retenciones practicadas de IRPF</field>
+     <field name='code'>IRPF.P.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_bi_01'>
+     <field ref='tax_code_irpf_p_bi' name='parent'/>
+     <field name='name'>Total base imponible por retenciones practicadas de IRPF al 1%</field>
+     <field name='code'>IRPF.P.BI.01</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_bi_07'>
+     <field ref='tax_code_irpf_p_bi' name='parent'/>
+     <field name='name'>Total base imponible por retenciones practicadas de IRPF al 7%</field>
+     <field name='code'>IRPF.P.BI.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_bi_15'>
+     <field ref='tax_code_irpf_p_bi' name='parent'/>
+     <field name='name'>Total base imponible por retenciones practicadas de IRPF al 15%</field>
+     <field name='code'>IRPF.P.BI.15</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_bi_18'>
+     <field ref='tax_code_irpf_p_bi' name='parent'/>
+     <field name='name'>Total base imponible por retenciones practicadas de IRPF al 18%</field>
+     <field name='code'>IRPF.P.BI.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_c'>
+     <field ref='tax_code_irpf_p' name='parent'/>
+     <field name='name'>Cuota</field>
+     <field name='code'>IRPF.P.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_c_01'>
+     <field ref='tax_code_irpf_p_c' name='parent'/>
+     <field name='name'>Total cuota por retenciones practicadas de IRPF al 1%</field>
+     <field name='code'>IRPF.P.C.01</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_c_07'>
+     <field ref='tax_code_irpf_p_c' name='parent'/>
+     <field name='name'>Total cuota por retenciones practicadas de IRPF al 7%</field>
+     <field name='code'>IRPF.P.C.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_c_15'>
+     <field ref='tax_code_irpf_p_c' name='parent'/>
+     <field name='name'>Total cuota por retenciones practicadas de IRPF al 15%</field>
+     <field name='code'>IRPF.P.C.15</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_irpf_p_c_18'>
+     <field ref='tax_code_irpf_p_c' name='parent'/>
+     <field name='name'>Total cuota por retenciones practicadas de IRPF al 18%</field>
+     <field name='code'>IRPF.P.C.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+
+   <!-- VAT -->
+   <record model='account.tax.code.template' id='tax_code_iva'>
+     <field ref='tax_code_es' name='parent'/>
+     <field name='name'>IVA</field>
+     <field name='code'>IVA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <!-- 477 -->
+   <record model='account.tax.code.template' id='tax_code_iva_dev'>
+     <field ref='tax_code_iva' name='parent'/>
+     <field name='name'>Devengado</field>
+     <field name='code'>IVA.DEV</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg'>
+     <field ref='tax_code_iva_dev' name='parent'/>
+     <field name='name'>Régimen General</field>
+     <field name='code'>IVA.DEV.RG</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi'>
+     <field ref='tax_code_iva_dev_rg' name='parent'/>
+     <field name='name'>Total base imponible en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04'>
+     <field ref='tax_code_iva_dev_rg_bi' name='parent'/>
+     <field name='name'>Total base imponible con 4% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI.04</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_ro'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.BI.04.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_oi'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.BI.04.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_rebu'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.BI.04.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_isp'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.BI.04.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_mbc'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.BI.04.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_04_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_bi_04' name='parent'/>
+     <field name='name'>Base imponible al 4% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.BI.04.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07'>
+     <field ref='tax_code_iva_dev_rg_bi' name='parent'/>
+     <field name='name'>Total base imponible con 7% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_ro'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.BI.07.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_oi'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.BI.07.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_rebu'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.BI.07.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_isp'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.BI.07.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_mbc'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.BI.07.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_07_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_bi_07' name='parent'/>
+     <field name='name'>Base imponible al 7% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.BI.07.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08'>
+     <field ref='tax_code_iva_dev_rg_bi' name='parent'/>
+     <field name='name'>Total base imponible con 8% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI.08</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_ro'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.BI.08.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_oi'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.BI.08.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_rebu'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.BI.08.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_isp'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.BI.08.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_mbc'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.BI.08.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_08_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_bi_08' name='parent'/>
+     <field name='name'>Base imponible al 8% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.BI.08.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16'>
+     <field ref='tax_code_iva_dev_rg_bi' name='parent'/>
+     <field name='name'>Total base imponible con 16% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI.16</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_ro'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.BI.16.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_oi'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.BI.16.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_rebu'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.BI.16.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_reav'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por régimen especial de agencias de viajes</field>
+     <field name='code'>IVA.DEV.RG.BI.16.REAV</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_isp'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.BI.16.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_mbc'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.BI.16.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_16_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_bi_16' name='parent'/>
+     <field name='name'>Base imponible al 16% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.BI.16.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18'>
+     <field ref='tax_code_iva_dev_rg_bi' name='parent'/>
+     <field name='name'>Total base imponible con 18% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.BI.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_ro'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.BI.18.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_oi'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.BI.18.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_rebu'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.BI.18.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_reav'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por régimen especial de agencias de viajes</field>
+     <field name='code'>IVA.DEV.RG.BI.18.REAV</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_isp'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.BI.18.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_mbc'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.BI.18.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_bi_18_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_bi_18' name='parent'/>
+     <field name='name'>Base imponible al 18% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.BI.18.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c'>
+     <field ref='tax_code_iva_dev_rg' name='parent'/>
+     <field name='name'>Total cuota en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04'>
+     <field ref='tax_code_iva_dev_rg_c' name='parent'/>
+     <field name='name'>Total cuota al 4% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C.04.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_ro'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.C.04.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_oi'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.C.04.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_rebu'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.C.04.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_isp'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.C.04.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_mbc'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.C.04.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_04_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_c_04' name='parent'/>
+     <field name='name'>Cuota al 4% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.C.04.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07'>
+     <field ref='tax_code_iva_dev_rg_c' name='parent'/>
+     <field name='name'>Total cuota al 7% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_ro'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.C.07.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_oi'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.C.07.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_rebu'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.C.07.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_isp'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.C.07.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_mbc'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.C.07.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_07_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_c_07' name='parent'/>
+     <field name='name'>Cuota al 7% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.C.07.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08'>
+     <field ref='tax_code_iva_dev_rg_c' name='parent'/>
+     <field name='name'>Total cuota al 8% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C.08</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_ro'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.C.08.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_oi'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.C.08.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_rebu'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.C.08.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_isp'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.C.08.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_mbc'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.C.08.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_08_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_c_08' name='parent'/>
+     <field name='name'>Cuota al 8% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.C.08.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16'>
+     <field ref='tax_code_iva_dev_rg_c' name='parent'/>
+     <field name='name'>Total cuota al 16% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C.16</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_ro'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.C.16.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_oi'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.C.16.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_rebu'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.C.16.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_reav'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por régimen especial de agencias de viajes</field>
+     <field name='code'>IVA.DEV.RG.C.16.REAV</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_isp'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.C.16.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_mbc'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.C.16.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_16_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_c_16' name='parent'/>
+     <field name='name'>Cuota al 16% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.C.16.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18'>
+     <field ref='tax_code_iva_dev_rg_c' name='parent'/>
+     <field name='name'>Total cuota al 18% de IVA en régimen general</field>
+     <field name='code'>IVA.DEV.RG.C.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_ro'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por régimen ordinario</field>
+     <field name='code'>IVA.DEV.RG.C.18.RO</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_oi'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por operaciones intragrupo</field>
+     <field name='code'>IVA.DEV.RG.C.18.OI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_rebu'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por régimen especial de bienes usados, objetos de arte, antigüedades y objetos de colección</field>
+     <field name='code'>IVA.DEV.RG.C.18.REBU</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_reav'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por régimen especial de agencias de viajes</field>
+     <field name='code'>IVA.DEV.RG.C.18.REAV</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_isp'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por inversión del sujeto pasivo</field>
+     <field name='code'>IVA.DEV.RG.C.18.ISP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_mbc'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por modificación de bases y cuotas</field>
+     <field name='code'>IVA.DEV.RG.C.18.MBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_rg_c_18_mbcadca'>
+     <field ref='tax_code_iva_dev_rg_c_18' name='parent'/>
+     <field name='name'>Cuota al 18% de IVA por modificación de bases y cuotas por auto de declaración de concurso de acreedores</field>
+     <field name='code'>IVA.DEV.RG.C.18.MBCADCA</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re'>
+     <field ref='tax_code_iva_dev' name='parent'/>
+     <field name='name'>Recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_bi'>
+     <field ref='tax_code_iva_dev_re' name='parent'/>
+     <field name='name'>Total base imponible del recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_bi_05'>
+     <field ref='tax_code_iva_dev_re_bi' name='parent'/>
+     <field name='name'>Total base imponible con 0,5% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.BI.05</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_bi_1'>
+     <field ref='tax_code_iva_dev_re_bi' name='parent'/>
+     <field name='name'>Total base imponible con 1% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.BI.1</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_bi_175'>
+     <field ref='tax_code_iva_dev_re_bi' name='parent'/>
+     <field name='name'>Total base imponible con 1,75% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.BI.175</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_bi_4'>
+     <field ref='tax_code_iva_dev_re_bi' name='parent'/>
+     <field name='name'>Total base imponible con 4% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.BI.4</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_c'>
+     <field ref='tax_code_iva_dev_re' name='parent'/>
+     <field name='name'>Total cuota del recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_c_05'>
+     <field ref='tax_code_iva_dev_re_c' name='parent'/>
+     <field name='name'>Total cuota con 0,5% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.C.05</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_c_1'>
+     <field ref='tax_code_iva_dev_re_c' name='parent'/>
+     <field name='name'>Total cuota con 1% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.C.1</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_c_175'>
+     <field ref='tax_code_iva_dev_re_c' name='parent'/>
+     <field name='name'>Total cuota con 1,75% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.C.175</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_re_c_4'>
+     <field ref='tax_code_iva_dev_re_c' name='parent'/>
+     <field name='name'>Total cuota con 4% de recargo de equivalencia</field>
+     <field name='code'>IVA.DEV.RE.C.4</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai'>
+     <field ref='tax_code_iva_dev' name='parent'/>
+     <field name='name'>Adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi'>
+     <field ref='tax_code_iva_dev_ai' name='parent'/>
+     <field name='name'>Total base imponible de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi_04'>
+     <field ref='tax_code_iva_dev_ai_bi' name='parent'/>
+     <field name='name'>Total base imponible con 4% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI.04</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi_07'>
+     <field ref='tax_code_iva_dev_ai_bi' name='parent'/>
+     <field name='name'>Total base imponible con 7% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi_08'>
+     <field ref='tax_code_iva_dev_ai_bi' name='parent'/>
+     <field name='name'>Total base imponible con 8% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI.08</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi_16'>
+     <field ref='tax_code_iva_dev_ai_bi' name='parent'/>
+     <field name='name'>Total base imponible con 16% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI.16</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_bi_18'>
+     <field ref='tax_code_iva_dev_ai_bi' name='parent'/>
+     <field name='name'>Total base imponible con 18% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.BI.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c'>
+     <field ref='tax_code_iva_dev_ai' name='parent'/>
+     <field name='name'>Total cuota de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c_04'>
+     <field ref='tax_code_iva_dev_ai_c' name='parent'/>
+     <field name='name'>Total cuota al 4% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C.04</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c_07'>
+     <field ref='tax_code_iva_dev_ai_c' name='parent'/>
+     <field name='name'>Total cuota al 7% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C.07</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c_08'>
+     <field ref='tax_code_iva_dev_ai_c' name='parent'/>
+     <field name='name'>Total cuota al 8% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C.08</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c_16'>
+     <field ref='tax_code_iva_dev_ai_c' name='parent'/>
+     <field name='name'>Total cuota al 16% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C.16</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_dev_ai_c_18'>
+     <field ref='tax_code_iva_dev_ai_c' name='parent'/>
+     <field name='name'>Total cuota al 18% de IVA de adquisiciones intracomunitarias</field>
+     <field name='code'>IVA.DEV.AI.C.18</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <!-- 472 -->
+   <record model='account.tax.code.template' id='tax_code_iva_ded'>
+     <field ref='tax_code_iva' name='parent'/>
+     <field name='name'>Deducible</field>
+     <field name='code'>IVA.DED</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Operaciones interiores corrientes</field>
+     <field name='code'>IVA.DED.OIC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_bi'>
+     <field ref='tax_code_iva_ded_oic' name='parent'/>
+     <field name='name'>Total base imponible por operaciones interiores corrientes</field>
+     <field name='code'>IVA.DED.OIC.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_bi_oibsc'>
+     <field ref='tax_code_iva_ded_oic_bi' name='parent'/>
+     <field name='name'>Total base imponible por operaciones interiores de bienes y servicios corrientes</field>
+     <field name='code'>IVA.DED.OIC.BI.OIBSC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_bi_ogbsc'>
+     <field ref='tax_code_iva_ded_oic_bi' name='parent'/>
+     <field name='name'>Total base imponible por operaciones intragrupo con bienes y servicios corrientes</field>
+     <field name='code'>IVA.DED.OIC.BI.OGBSC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_c'>
+     <field ref='tax_code_iva_ded_oic' name='parent'/>
+     <field name='name'>Total cuota de operaciones interiores corrientes</field>
+     <field name='code'>IVA.DED.OIC.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_c_oibsc'>
+     <field ref='tax_code_iva_ded_oic_c' name='parent'/>
+     <field name='name'>Total cuota de operaciones interiores de bienes y servicios corrientes</field>
+     <field name='code'>IVA.DED.OIC.C.OIBSC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oic_c_ogbsc'>
+     <field ref='tax_code_iva_ded_oic_c' name='parent'/>
+     <field name='name'>Total cuota de operaciones intragrupo con bienes y servicios corrientes</field>
+     <field name='code'>IVA.DED.OIC.C.OIBSC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Operaciones interiores con bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_bi'>
+     <field ref='tax_code_iva_ded_oibi' name='parent'/>
+     <field name='name'>Total base imponible por operaciones interiores con bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_bi_oibi'>
+     <field ref='tax_code_iva_ded_oibi_bi' name='parent'/>
+     <field name='name'>Total base imponible por operaciones interiores de bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.BI.OIBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_bi_ogbi'>
+     <field ref='tax_code_iva_ded_oibi_bi' name='parent'/>
+     <field name='name'>Total base imponible por operaciones intragrupo con bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.BI.OGBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_c'>
+     <field ref='tax_code_iva_ded_oibi' name='parent'/>
+     <field name='name'>Total cuota de operaciones interiores con bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_c_oibi'>
+     <field ref='tax_code_iva_ded_oibi_c' name='parent'/>
+     <field name='name'>Total cuota de operaciones interiores de bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.C.OIBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_oibi_c_ogbi'>
+     <field ref='tax_code_iva_ded_oibi_c' name='parent'/>
+     <field name='name'>Total cuota de operaciones intragrupo con bienes de inversión</field>
+     <field name='code'>IVA.DED.OIBI.C.OGBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibc'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Importaciones de bienes corrientes</field>
+     <field name='code'>IVA.DED.IBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibc_bi'>
+     <field ref='tax_code_iva_ded_ibc' name='parent'/>
+     <field name='name'>Total base imponible por importaciones de bienes corrientes</field>
+     <field name='code'>IVA.DED.IBC.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibc_c'>
+     <field ref='tax_code_iva_ded_ibc' name='parent'/>
+     <field name='name'>Total cuota de importaciones de bienes corrientes</field>
+     <field name='code'>IVA.DED.IBC.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibi'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Importaciones de bienes de inversión</field>
+     <field name='code'>IVA.DED.IBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibi_bi'>
+     <field ref='tax_code_iva_ded_ibi' name='parent'/>
+     <field name='name'>Total base imponible por importaciones de bienes de inversión</field>
+     <field name='code'>IVA.DED.IBI.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_ibi_c'>
+     <field ref='tax_code_iva_ded_ibi' name='parent'/>
+     <field name='name'>Total cuota de importaciones de bienes de inversión</field>
+     <field name='code'>IVA.DED.IBI.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibc'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='code'>IVA.DED.AIBC</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibc_bi'>
+     <field ref='tax_code_iva_ded_aibc' name='parent'/>
+     <field name='name'>Total base imponible por adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='code'>IVA.DED.AIBC.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibc_c'>
+     <field ref='tax_code_iva_ded_aibc' name='parent'/>
+     <field name='name'>Total cuota de adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='code'>IVA.DED.AIBC.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibi'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='code'>IVA.DED.AIBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibi_bi'>
+     <field ref='tax_code_iva_ded_aibi' name='parent'/>
+     <field name='name'>Total base imponible por adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='code'>IVA.DED.AIBI.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_aibi_c'>
+     <field ref='tax_code_iva_ded_aibi' name='parent'/>
+     <field name='name'>Total cuota de adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='code'>IVA.DED.AIBI.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_creagp'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Compensaciones en régimen especial de la agricultura, ganadería y pesca</field>
+     <field name='code'>IVA.DED.CREAGP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_creagp_bi'>
+     <field ref='tax_code_iva_ded_creagp' name='parent'/>
+     <field name='name'>Total base imponible por compensaciones en régimen especial de la agricultura, ganadería y pesca</field>
+     <field name='code'>IVA.DED.CREAGP.BI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_creagp_c'>
+     <field ref='tax_code_iva_ded_creagp' name='parent'/>
+     <field name='name'>Total cuota de compensaciones en régimen especial de la agricultura, ganadería y pesca</field>
+     <field name='code'>IVA.DED.CREAGP.C</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_rd'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Rectificación de deducciones</field>
+     <field name='code'>IVA.DED.RD</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_rbi'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Regularización de bienes de inversión</field>
+     <field name='code'>IVA.DED.RBI</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.code.template' id='tax_code_iva_ded_rapdp'>
+     <field ref='tax_code_iva_ded' name='parent'/>
+     <field name='name'>Regularización por aplicación de porcentaje definitivo de prorrata</field>
+     <field name='code'>IVA.DED.RAPDP</field>
+     <field ref='pgc' name='account'/>
+   </record>
+
+   <!-- Tax groups -->
+   <record model='account.tax.group' id='tax_group_iva_dev_bien'>
+     <field name='name'>IVA devengado por bienes</field>
+     <field name='code'>IVA.DEV.BIEN</field>
+   </record>
+   <record model='account.tax.group' id='tax_group_iva_dev_serv'>
+     <field name='name'>IVA devengado por servicios</field>
+     <field name='code'>IVA.DEV.SERV</field>
+   </record>
+   <record model='account.tax.group' id='tax_group_iva_ded_bien_corr'>
+     <field name='name'>IVA deducible por bienes corrientes</field>
+     <field name='code'>IVA.DED.BIEN.CORR</field>
+   </record>
+   <record model='account.tax.group' id='tax_group_iva_ded_bien_inv'>
+     <field name='name'>IVA deducible por bienes de inversión</field>
+     <field name='code'>IVA.DED.BIEN.INV</field>
+   </record>
+   <record model='account.tax.group' id='tax_group_iva_ded_serv'>
+     <field name='name'>IVA deducible por servicios</field>
+     <field name='code'>IVA.DED.SERV</field>
+   </record>
+
+   <!-- Received VAT -->
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_04_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido en regimen ordinario por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_07_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido en regimen ordinario por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_08_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido en regimen ordinario por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_16_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido en regimen ordinario por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_18_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido en regimen ordinario por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_04_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido en régimen ordinario por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_07_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido en régimen ordinario por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_08_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido en régimen ordinario por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_16_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido en régimen ordinario por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_ro_18_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido en régimen ordinario por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_04_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_04_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido en operaciones intragrupo por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_07_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido en operaciones intragrupo por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_08_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido en operaciones intragrupo por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_16_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_16_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido en operaciones intragrupo por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_18_bien'>
+     <field ref='tax_code_iva_dev_rg_bi_18_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido en operaciones intragrupo por bienes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_04_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_04_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido en operaciones intragrupo por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_07_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido en operaciones intragrupo por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_08_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido en operaciones intragrupo por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_16_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_16_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido en operaciones intragrupo por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_oi_18_serv'>
+     <field ref='tax_code_iva_dev_rg_bi_18_oi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_oi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_oi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_oi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_serv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido en operaciones intragrupo por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+
+   <!-- Received VAT: VAT surcharge -->
+   <record model='account.tax.template' id='tax_iva_dev_04_re_05'>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>4% IVA repercutido + 0,50% recargo de equivalencia</field>
+     <field name='description'>4% IVA + 0,50% r.e.</field>
+     <field name='type'>none</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_04'>
+     <field ref='tax_iva_dev_04_re_05' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido en régimen ordinario</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_05'>
+     <field ref='tax_iva_dev_04_re_05' name='parent'/>
+     <field ref='tax_code_iva_dev_re_bi_05' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_05' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_05' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_05' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('0.5')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>0,50% recargo de equivalencia</field>
+     <field name='name'>0,50% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_07_re_1'>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>7% IVA repercutido + 1% recargo de equivalencia</field>
+     <field name='description'>7% IVA + 1% r.e.</field>
+     <field name='type'>none</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_07'>
+     <field ref='tax_iva_dev_07_re_1' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido en régimen ordinario</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_1'>
+     <field ref='tax_iva_dev_07_re_1' name='parent'/>
+     <field ref='tax_code_iva_dev_re_bi_1' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_1' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_1' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_1' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('1')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>1% recargo de equivalencia</field>
+     <field name='name'>1% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>31</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_08_re_1'>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>8% IVA repercutido + 1% recargo de equivalencia</field>
+     <field name='description'>8% IVA + 1% r.e.</field>
+     <field name='type'>none</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_08'>
+     <field ref='tax_iva_dev_08_re_1' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido en régimen ordinario</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_08_1'>
+     <field ref='tax_iva_dev_08_re_1' name='parent'/>
+     <field ref='tax_code_iva_dev_re_bi_1' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_1' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_1' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_1' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('1')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>1% recargo de equivalencia</field>
+     <field name='name'>1% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>31</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_175'>
+     <field ref='tax_code_iva_dev_re_bi_175' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_175' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_175' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_175' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field name='percentage' eval="Decimal('1.75')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>1,75% recargo de equivalencia</field>
+     <field name='name'>1,75% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>11</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_16_re_4'>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>16% IVA repercutido + 4% recargo de equivalencia</field>
+     <field name='description'>16% IVA + 4% r.e.</field>
+     <field name='type'>none</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_16'>
+     <field ref='tax_iva_dev_16_re_4' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido en régimen ordinario</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_4'>
+     <field ref='tax_iva_dev_16_re_4' name='parent'/>
+     <field ref='tax_code_iva_dev_re_bi_4' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_4' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_4' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_4' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% recargo de equivalencia</field>
+     <field name='name'>4% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>41</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_18_re_4'>
+     <field ref='tax_group_iva_dev_bien' name='group'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>18% IVA repercutido + 4% recargo de equivalencia</field>
+     <field name='description'>18% IVA + 4% r.e.</field>
+     <field name='type'>none</field>
+     <field name='sequence'>21</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_18'>
+     <field ref='tax_iva_dev_18_re_4' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_ro' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_ro' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido en régimen ordinario</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_re_18_4'>
+     <field ref='tax_iva_dev_18_re_4' name='parent'/>
+     <field ref='tax_code_iva_dev_re_bi_4' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_re_bi_4' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_re_c_4' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_re_c_4' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_4750' name='invoice_account'/>
+     <field ref='pgc_4750' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% recargo de equivalencia</field>
+     <field name='name'>4% recargo de equivalencia</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>41</field>
+   </record>
+
+   <!-- EU operations -->
+   <record model='account.tax.template' id='intrastat_isp_04'>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA intracomunitario por inversión del sujeto pasivo</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_isp_04'>
+     <field ref='intrastat_isp_04' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_isp' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_04_isp' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_04_isp' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_04_isp' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_isp_04'>
+     <field ref='intrastat_isp_04' name='parent'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_isp_07'>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA intracomunitario por inversión del sujeto pasivo</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_isp_07'>
+     <field ref='intrastat_isp_07' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_isp' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_07_isp' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_07_isp' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_07_isp' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_isp_07'>
+     <field ref='intrastat_isp_07' name='parent'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_isp_08'>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA intracomunitario por inversión del sujeto pasivo</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_isp_08'>
+     <field ref='intrastat_isp_08' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_isp' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_08_isp' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_08_isp' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_08_isp' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_isp_08'>
+     <field ref='intrastat_isp_08' name='parent'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_isp_16'>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA intracomunitario por inversión del sujeto pasivo</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_isp_16'>
+     <field ref='intrastat_isp_16' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_isp' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_16_isp' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_16_isp' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_16_isp' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_isp_16'>
+     <field ref='intrastat_isp_16' name='parent'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_isp_18'>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA intracomunitario por inversión del sujeto pasivo</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_isp_18'>
+     <field ref='intrastat_isp_18' name='parent'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_isp' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_rg_bi_18_isp' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_rg_c_18_isp' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_rg_c_18_isp' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_isp_18'>
+     <field ref='intrastat_isp_18' name='parent'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado por inversión del sujeto pasivo</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bc_04'>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA intracomunitario por adquisición de bienes corrientes</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bc_04'>
+     <field ref='intrastat_bc_04' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_04' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_04' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_04' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_04' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bc_04'>
+     <field ref='intrastat_bc_04' name='parent'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bc_07'>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA intracomunitario por adquisición de bienes corrientes</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bc_07'>
+     <field ref='intrastat_bc_07' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_07' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_07' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_07' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_07' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bc_07'>
+     <field ref='intrastat_bc_07' name='parent'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bc_08'>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA intracomunitario por adquisición de bienes corrientes</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bc_08'>
+     <field ref='intrastat_bc_08' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_08' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_08' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_08' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_08' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bc_08'>
+     <field ref='intrastat_bc_08' name='parent'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bc_16'>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA intracomunitario por adquisición de bienes corrientes</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bc_16'>
+     <field ref='intrastat_bc_16' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_16' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_16' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_16' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_16' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bc_16'>
+     <field ref='intrastat_bc_16' name='parent'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bc_18'>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA intracomunitario por adquisición de bienes corrientes</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bc_18'>
+     <field ref='intrastat_bc_18' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_18' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_18' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_18' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_18' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bc_18'>
+     <field ref='intrastat_bc_18' name='parent'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado por adquisición de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bi_04'>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA intracomunitario por adquisición de bienes de inversión</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bi_04'>
+     <field ref='intrastat_bi_04' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_04' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_04' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_04' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_04' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA</field>
+     <field name='name'>4% IVA repercutido por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bi_04'>
+     <field ref='intrastat_bi_04' name='parent'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bi_07'>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA intracomunitario por adquisición de bienes de inversión</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bi_07'>
+     <field ref='intrastat_bi_07' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_07' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_07' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_07' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_07' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA</field>
+     <field name='name'>7% IVA repercutido por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bi_07'>
+     <field ref='intrastat_bi_07' name='parent'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bi_08'>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA intracomunitario por adquisición de bienes de inversión</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bi_08'>
+     <field ref='intrastat_bi_08' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_08' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_08' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_08' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_08' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA</field>
+     <field name='name'>8% IVA repercutido por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bi_08'>
+     <field ref='intrastat_bi_08' name='parent'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bi_16'>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA intracomunitario por adquisición de bienes de inversión</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bi_16'>
+     <field ref='intrastat_bi_16' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_16' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_16' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_16' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_16' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA</field>
+     <field name='name'>16% IVA repercutido por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bi_16'>
+     <field ref='intrastat_bi_16' name='parent'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='intrastat_bi_18'>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA intracomunitario por adquisición de bienes de inversión</field>
+     <field name='sequence'>20</field>
+     <field name='type'>none</field>
+     <field ref='pgc' name='account'/>
+   </record>
+   <record model='account.tax.template' id='tax_iva_dev_rg_bi_18'>
+     <field ref='intrastat_bi_18' name='parent'/>
+     <field ref='tax_code_iva_dev_ai_bi_18' name='invoice_base_code'/>
+     <field ref='tax_code_iva_dev_ai_bi_18' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_dev_ai_c_18' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_dev_ai_c_18' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_477' name='invoice_account'/>
+     <field ref='pgc_477' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA</field>
+     <field name='name'>18% IVA repercutido por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_rg_bi_18'>
+     <field ref='intrastat_bi_18' name='parent'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado por adquisición de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+
+   <!-- Paid VAT -->
+   <record model='account.tax.template' id='tax_iva_ded_oic_oibc_04'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones interiores de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_oibc_07'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones interiores de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_oibc_08'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones interiores de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_oibc_16'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones interiores de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_oibc_18'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones interiores de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ois_04'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones interiores por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ois_07'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones interiores por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ois_08'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones interiores por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ois_16'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones interiores por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ois_18'>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_oibsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_oibsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones interiores por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogbc_04'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones intragrupos con bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogbc_07'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones intragrupos con bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogbc_08'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones intragrupos con bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogbc_16'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones intragrupos con bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogbc_18'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones intragrupos con bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogs_04'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones intragrupos por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogs_07'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones intragrupos por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogs_08'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones intragrupos por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogs_16'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones intragrupos por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oic_ogs_18'>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oic_bi_ogbsc' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oic_c_ogbsc' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_serv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones intragrupos por servicios</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_oibi_04'>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones interiores de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_oibi_07'>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones interiores de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_oibi_08'>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones interiores de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_oibi_16'>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones interiores de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_oibi_18'>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_oibi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_oibi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones interiores de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_ogbi_04'>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en operaciones intragrupos con bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_ogbi_07'>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en operaciones intragrupos con bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_ogbi_08'>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en operaciones intragrupos con bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_ogbi_16'>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en operaciones intragrupos con bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_oibi_ogbi_18'>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_oibi_bi_ogbi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_oibi_c_ogbi' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en operaciones intragrupos con bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibc_04'>
+     <field ref='tax_code_iva_ded_ibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en importaciones de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibc_07'>
+     <field ref='tax_code_iva_ded_ibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en importaciones de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibc_08'>
+     <field ref='tax_code_iva_ded_ibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en importaciones de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibc_16'>
+     <field ref='tax_code_iva_ded_ibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en importaciones de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibc_18'>
+     <field ref='tax_code_iva_ded_ibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en importaciones de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibi_04'>
+     <field ref='tax_code_iva_ded_ibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en importaciones de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibi_07'>
+     <field ref='tax_code_iva_ded_ibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en importaciones de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibi_08'>
+     <field ref='tax_code_iva_ded_ibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en importaciones de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibi_16'>
+     <field ref='tax_code_iva_ded_ibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en importaciones de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_ibi_18'>
+     <field ref='tax_code_iva_ded_ibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_ibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_ibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_ibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en importaciones de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibc_04'>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibc_07'>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibc_08'>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibc_16'>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibc_18'>
+     <field ref='tax_code_iva_ded_aibc_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibc_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibc_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibc_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_corr' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en adquisiciones intracomunitarias de bienes corrientes</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibi_04'>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('4')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>4% IVA soportado</field>
+     <field name='name'>4% IVA soportado en adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibi_07'>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('7')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>7% IVA soportado</field>
+     <field name='name'>7% IVA soportado en adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibi_08'>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('8')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>8% IVA soportado</field>
+     <field name='name'>8% IVA soportado en adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibi_16'>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('16')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>16% IVA soportado</field>
+     <field name='name'>16% IVA soportado en adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.template' id='tax_iva_ded_aibi_18'>
+     <field ref='tax_code_iva_ded_aibi_bi' name='invoice_base_code'/>
+     <field ref='tax_code_iva_ded_aibi_bi' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_iva_ded_aibi_c' name='invoice_tax_code'/>
+     <field ref='tax_code_iva_ded_aibi_c' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field ref='tax_group_iva_ded_bien_inv' name='group'/>
+     <field name='percentage' eval="Decimal('18')"/>
+     <field ref='pgc_472' name='invoice_account'/>
+     <field ref='pgc_472' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='description'>18% IVA soportado</field>
+     <field name='name'>18% IVA soportado en adquisiciones intracomunitarias de bienes de inversión</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>20</field>
+   </record>
+
+   <!-- Income tax to be paid to the tax agency on behalf the provider -->
+   <record model='account.tax.template' id='tax_irpf_p_01'>
+     <field ref='tax_code_irpf_p_bi_01' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_p_bi_01' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_p_c_01' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_p_c_01' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-1')"/>
+     <field ref='pgc_4751' name='invoice_account'/>
+     <field ref='pgc_4751' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>1% IRPF de proveedor</field>
+     <field name='description'>1% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>50</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_p_07'>
+     <field ref='tax_code_irpf_p_bi_07' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_p_bi_07' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_p_c_07' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_p_c_07' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-7')"/>
+     <field ref='pgc_4751' name='invoice_account'/>
+     <field ref='pgc_4751' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>7% IRPF de proveedor</field>
+     <field name='description'>7% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>60</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_p_15'>
+     <field ref='tax_code_irpf_p_bi_15' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_p_bi_15' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_p_c_15' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_p_c_15' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-15')"/>
+     <field ref='pgc_4751' name='invoice_account'/>
+     <field ref='pgc_4751' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>15% IRPF de proveedor</field>
+     <field name='description'>15% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>70</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_p_18'>
+     <field ref='tax_code_irpf_p_bi_18' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_p_bi_18' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_p_c_18' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_p_c_18' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-18')"/>
+     <field ref='pgc_4751' name='invoice_account'/>
+     <field ref='pgc_4751' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>18% IRPF de proveedor</field>
+     <field name='description'>18% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>80</field>
+   </record>
+
+   <!-- Income tax paid to the customer so he pays it to the tax agency in your name -->
+   <record model='account.tax.template' id='tax_irpf_ac_01'>
+     <field ref='tax_code_irpf_ac_bi_01' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_ac_bi_01' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_ac_c_01' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_ac_c_01' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-1')"/>
+     <field ref='pgc_473' name='invoice_account'/>
+     <field ref='pgc_473' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>1% IRPF propio</field>
+     <field name='description'>1% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>50</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_ac_07'>
+     <field ref='tax_code_irpf_ac_bi_07' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_ac_bi_07' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_ac_c_07' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_ac_c_07' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-7')"/>
+     <field ref='pgc_473' name='invoice_account'/>
+     <field ref='pgc_473' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>7% IRPF propio</field>
+     <field name='description'>7% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>60</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_ac_15'>
+     <field ref='tax_code_irpf_ac_bi_15' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_ac_bi_15' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_ac_c_15' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_ac_c_15' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-15')"/>
+     <field ref='pgc_473' name='invoice_account'/>
+     <field ref='pgc_473' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>15% IRPF propio</field>
+     <field name='description'>15% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>70</field>
+   </record>
+   <record model='account.tax.template' id='tax_irpf_ac_18'>
+     <field ref='tax_code_irpf_ac_bi_18' name='invoice_base_code'/>
+     <field ref='tax_code_irpf_ac_bi_18' name='credit_note_base_code'/>
+     <field name='credit_note_base_sign' eval="-1"/>
+     <field ref='tax_code_irpf_ac_c_18' name='invoice_tax_code'/>
+     <field ref='tax_code_irpf_ac_c_18' name='credit_note_tax_code'/>
+     <field name='invoice_tax_sign' eval="1"/>
+     <field name='credit_note_tax_sign' eval="-1"/>
+     <field name='percentage' eval="Decimal('-18')"/>
+     <field ref='pgc_473' name='invoice_account'/>
+     <field ref='pgc_473' name='credit_note_account'/>
+     <field ref='pgc' name='account'/>
+     <field name='name'>18% IRPF propio</field>
+     <field name='description'>18% IRPF</field>
+     <field name='type'>percentage</field>
+     <field name='sequence'>80</field>
+   </record>
+
+   <!-- Tax rules -->
+   <!-- Customers -->
+   <record model='account.tax.rule.template' id='tax_rule_icrre'>
+     <field name='name'>Operaciones interiores con clientes (Régimen recargo de equivalencia)</field>
+     <field name='account' ref='pgc' />
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_icrre_00'>
+     <field name='rule' ref='tax_rule_icrre' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_04_bien' />
+     <field name='tax' ref='tax_iva_dev_04_re_05' />
+     <field name='sequence'>00</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_icrre_05'>
+     <field name='rule' ref='tax_rule_icrre' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_07_bien' />
+     <field name='tax' ref='tax_iva_dev_07_re_1' />
+     <field name='sequence'>05</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_icrre_07'>
+     <field name='rule' ref='tax_rule_icrre' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_08_bien' />
+     <field name='tax' ref='tax_iva_dev_08_re_1' />
+     <field name='sequence'>07</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_icrre_10'>
+     <field name='rule' ref='tax_rule_icrre' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_16_bien' />
+     <field name='tax' ref='tax_iva_dev_16_re_4' />
+     <field name='sequence'>10</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_icrre_12'>
+     <field name='rule' ref='tax_rule_icrre' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_18_bien' />
+     <field name='tax' ref='tax_iva_dev_18_re_4' />
+     <field name='sequence'>12</field>
+   </record>
+   <record model='account.tax.rule.template' id='tax_rule_incrg'>
+     <field name='name'>Operaciones intragrupo con clientes (Régimen general)</field>
+     <field name='account' ref='pgc' />
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_00'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_04_bien' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_04_bien' />
+     <field name='sequence'>00</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_05'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_07_bien' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_07_bien' />
+     <field name='sequence'>05</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_07'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_08_bien' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_08_bien' />
+     <field name='sequence'>07</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_10'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_16_bien' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_16_bien' />
+     <field name='sequence'>10</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_12'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_bien' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_18_bien' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_18_bien' />
+     <field name='sequence'>12</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_15'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_serv' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_04_serv' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_04_serv' />
+     <field name='sequence'>15</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_20'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_serv' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_07_serv' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_07_serv' />
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_22'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_serv' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_08_serv' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_08_serv' />
+     <field name='sequence'>22</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_25'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_serv' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_16_serv' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_16_serv' />
+     <field name='sequence'>25</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_incrg_27'>
+     <field name='rule' ref='tax_rule_incrg' />
+     <field name='group' ref='tax_group_iva_dev_serv' />
+     <field name='origin_tax' ref='tax_iva_dev_rg_ro_18_serv' />
+     <field name='tax' ref='tax_iva_dev_rg_oi_18_serv' />
+     <field name='sequence'>27</field>
+   </record>
+
+   <!-- Providers -->
+   <record model='account.tax.rule.template' id='tax_rule_inprg'>
+     <field name='name'>Operaciones intragrupo con proveedores (Régimen general)</field>
+     <field name='account' ref='pgc' />
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_00'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_corr' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_oibc_04' />
+     <field name='tax' ref='tax_iva_ded_oic_ogbc_04' />
+     <field name='sequence'>00</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_05'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_corr' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_oibc_07' />
+     <field name='tax' ref='tax_iva_ded_oic_ogbc_07' />
+     <field name='sequence'>05</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_07'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_corr' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_oibc_08' />
+     <field name='tax' ref='tax_iva_ded_oic_ogbc_08' />
+     <field name='sequence'>07</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_10'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_corr' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_oibc_16' />
+     <field name='tax' ref='tax_iva_ded_oic_ogbc_16' />
+     <field name='sequence'>10</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_12'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_corr' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_oibc_18' />
+     <field name='tax' ref='tax_iva_ded_oic_ogbc_18' />
+     <field name='sequence'>12</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_15'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_inv' />
+     <field name='origin_tax' ref='tax_iva_ded_oibi_oibi_04' />
+     <field name='tax' ref='tax_iva_ded_oibi_ogbi_04' />
+     <field name='sequence'>15</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_20'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_inv' />
+     <field name='origin_tax' ref='tax_iva_ded_oibi_oibi_07' />
+     <field name='tax' ref='tax_iva_ded_oibi_ogbi_07' />
+     <field name='sequence'>20</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_22'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_inv' />
+     <field name='origin_tax' ref='tax_iva_ded_oibi_oibi_08' />
+     <field name='tax' ref='tax_iva_ded_oibi_ogbi_08' />
+     <field name='sequence'>22</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_25'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_inv' />
+     <field name='origin_tax' ref='tax_iva_ded_oibi_oibi_16' />
+     <field name='tax' ref='tax_iva_ded_oibi_ogbi_16' />
+     <field name='sequence'>25</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_27'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_bien_inv' />
+     <field name='origin_tax' ref='tax_iva_ded_oibi_oibi_18' />
+     <field name='tax' ref='tax_iva_ded_oibi_ogbi_18' />
+     <field name='sequence'>27</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_30'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_serv' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_ois_04' />
+     <field name='tax' ref='tax_iva_ded_oic_ogs_04' />
+     <field name='sequence'>30</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_35'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_serv' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_ois_07' />
+     <field name='tax' ref='tax_iva_ded_oic_ogs_07' />
+     <field name='sequence'>35</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_37'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_serv' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_ois_08' />
+     <field name='tax' ref='tax_iva_ded_oic_ogs_08' />
+     <field name='sequence'>37</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_40'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_serv' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_ois_16' />
+     <field name='tax' ref='tax_iva_ded_oic_ogs_16' />
+     <field name='sequence'>40</field>
+   </record>
+   <record model='account.tax.rule.line.template' id='tax_rule_line_inprg_42'>
+     <field name='rule' ref='tax_rule_inprg' />
+     <field name='group' ref='tax_group_iva_ded_serv' />
+     <field name='origin_tax' ref='tax_iva_ded_oic_ois_18' />
+     <field name='tax' ref='tax_iva_ded_oic_ogs_18' />
+     <field name='sequence'>42</field>
+   </record>
+ </data>
+</tryton>
